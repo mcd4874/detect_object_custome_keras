@@ -1,0 +1,38 @@
+Usage:
+circle_detection_v11_2:
+    build_detect_model.py: this file is used to build or evaluate model
+
+    There is a set of parameter in the main function to be modified before train
+
+    run script:
+    python build_detect_model.py
+
+    mode.py: this file contains the model structure of the CNN and the custom metric function to evaluate model during training process
+
+    create_train_set.py: this file has function to pre-process image data and generate dataset to train model
+
+main.py: this is the main original file include method to process data and model to evaluate model
+
+
+Require package:
+tensorflow==1.15
+opencv==4.1.2
+
+
+Train process replicate:
+n_epochs = 300
+img_size = 200
+max_radius = 50
+noise_level = 2
+n_train_sample = 20000
+n_test_sample = 2000
+n_valid_sample = 1000
+create_new_data = True
+checkpoint_path = "training_1/cp.ckpt"
+train_model = True
+eval_model = True
+save_model = False
+
+
+Result:
+the model result shall yield between 91-95% for prediction on the main function
